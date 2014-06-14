@@ -5,13 +5,13 @@ var page = require('webpage').create();
 
 function main(argv) {
   if (argv.length < 3) {
-    phantom.exit();
+    console.log("Usage: webshot [NAME] [URL]");
 
-    console.log("Usage: webshot NAME URL\n");
+    phantom.exit();
   }
 
   var url = argv[2] + "?zefKey=preview";
-  
+
   var file = "./screenshots/" + argv[1] + ".jpg";
 
   page.onError = function (msg, trace) {
