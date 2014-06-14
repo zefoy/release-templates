@@ -1,0 +1,16 @@
+{
+	"name": "ZEFScreenshotTaker",
+	"description" : "Screenshot tool",
+	"version": "0.1.0",
+	"main" : "index.js",
+	"author" : {
+		"name" : "Janne Julkunen",
+		"email" : "janne.julkunen@zef.fi"
+	},
+	"dependencies": {
+		"webshot": "0.9.0"
+	},
+	"licenses" : {
+		"type" : "none"
+	}
+}
