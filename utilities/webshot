@@ -1,0 +1,49 @@
+#! /usr/bin/env ./phantomjs
+
+var system = require('system');
+var page = require('webpage').create();
+
+function main(argv) {
+  if (argv.length < 3) {
+    console.log("Usage: webshot [NAME] [URL]");
+
+    phantom.exit();
+  }
+
+  var url = argv[2] + "?zefKey=preview";
+
+  var file = "../webshots/" + argv[1] + ".jpg";
+
+  page.onError = function (msg, trace) {
+    console.log(msg);
+
+    trace.forEach(function(item) {
+      console.log('  ', item.file, ':', item.line);
+    });
+  };
+
+  page.onResourceReceived = function(response) {
+    if (response.url == url)
+      page.injectJs("./bind.js");
+  };
+
+  page.viewportSize = {width: 1280, height: 800};
+
+  page.open(url, function(status) {
+    if (status !== 'success') {
+      console.log('Unable to load the URL: ' + url);
+
+      phantom.exit();
+    } else {
+      window.setTimeout(function() {
+        page.render(file);
+
+        console.log('A screenshot of ' + url + ' saved to ' + file + '');
+
+        phantom.exit();
+      }, 5000);
+    }
+  });
+}
+
+main(system.args);
