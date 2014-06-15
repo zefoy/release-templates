@@ -7,7 +7,7 @@ Release templates for ZEF Global applications.
   * Title text image on top left corner of the right half of the page
   * Background image which is displayed in correct aspect ratio
 
-**Virgin Connect**
+**Virgin Connect - Test yourself!**
 
   * Application placed on the top right corner of the left half of the page
   * Additional image added to the left side of the right half of the page
