@@ -36,7 +36,9 @@ function main(argv) {
       phantom.exit();
     } else {
       window.setTimeout(function() {
-        page.render(file);
+        page.clipRect = {top:0, left: 0, width: 1280, height: 800};
+
+				page.render(file);
 
         console.log('A screenshot of ' + url + ' saved to ' + file + '');
 
