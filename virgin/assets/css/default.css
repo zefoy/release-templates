@@ -89,15 +89,15 @@ body {
 
 .zef-popup-moved .image {
   -moz-animation-name: rotate;
-  -moz-animation-duration:1s;
-  -moz-animation-iteration-count:1;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
   -moz-animation-timing-function: ease-in;
   -moz-transform-origin: 55% 100%;
   -moz-animation-fill-mode: forwards;
 
   -webkit-animation-name: rotate;
-  -webkit-animation-duration:1s;
-  -webkit-animation-iteration-count:1;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in;
   -webkit-transform-origin: 55% 100%;
   -webkit-animation-fill-mode: forwards;
@@ -123,9 +123,26 @@ body {
   }
 }
 
-@media all and (max-width: 480px), all and (max-height: 400px) {
+@media all and (max-width: 660px) {
   .app {
     top: 0;
     right: 0;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .image {
+    display: none;
+  }
+}
+
+@media all and (max-height: 480px) {
+  .logo {
+    top: auto;
+    bottom: 50px;
   }
 }
